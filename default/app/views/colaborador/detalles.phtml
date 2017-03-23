@@ -1,0 +1,40 @@
+<div class="row">
+<div class="col-xs-12">
+	<h3 class="text-center">DETALLES DEL PRODUCTO/SERVICIO</h3>
+</div>
+	<div class="col-sm-6 col-xs-12">
+		<?php echo Html::img($datos->imagen1, 'producto', 'class="logo img-rounded"') ?>
+		<h4>Descripción</h4>
+		<p>
+			<?php echo $datos->descripcion ?>
+		</p>
+		<h5>Más detalles</h5>
+		<p>
+			<?php echo $datos->descripcionl ?>
+		</p>
+		<div class="form-group">
+		<?php echo Form::open("compras/agregar2/$datos->id", 'POST') ?>
+		<?php echo Form::hidden('valor', '', 'on') ?>
+		  <label>Cantidad:</label>
+		  <input type="number" name="cantidad" min="1" step="1" value="1" class="form-control">
+		  <input type="submit" value="Agregar" class="btn btn-success">
+		<?php echo Form::close() ?>
+		</div>
+	</div>
+		<div class="col-sm-6 col-xs-12">
+			<h4 class="text-center"><?php echo $datos->nombre ?></h4>
+			<ul class="list-group">
+				<li class="list-group-item"><b>Precio normal:</b> <?php echo $datos->precio ?></li>
+				<li class="list-group-item"><b>Oferta:</b> <?php echo $datos->oferta ?></li>
+				<li class="list-group-item"><b>Ubicación:</b> <?php echo $proveedor->direccion ?></li>
+				<li class="list-group-item"><b>Entrega:</b>
+					<ol>
+					<?php foreach($comunas as $valor): ?>
+						<li><?php echo $valor->comuna ?></li>
+					<?php endforeach ?>
+					</ol>
+				</li>
+				<li class="list-group-item"><b>Proveedor:</b> <?php echo $proveedor->nombre ?></li>
+			</ul>
+		</div>
+</div>

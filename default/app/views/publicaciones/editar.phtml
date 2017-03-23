@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<h3 class="text-center">Editar publicación</h3>
+		<?php View::content() ?>
+		<?php echo Form::openMultipart() ?>
+		<input type="hidden" value="<?php echo $identidad ?>" name="id">
+				<div class="form-group">
+					<div class="col-sm-6">
+						<label>Nombre del producto/servicio</label>
+						<?php echo Form::text('nombre', "class='form-control'", $publicacion->nombre) ?>
+						<label>Precio</label>
+						<input type="number" name="precio" min="1" step="1" class="form-control" value="<?php echo $publicacion->precio ?>">
+						<label>Oferta</label>
+						<input type="number" name="oferta" min="1" step="1" class="form-control" value="<?php echo $publicacion->oferta ?>">
+						<label>¿Es un servicio o producto?</label>
+						<select name="tipo" class="form-control">
+							<?php foreach($tipo as $key=>$valor): ?>
+								<?php if($valor == $publicacion->tipo): ?>
+									<?php echo "<option value=".$valor." selected>$key</option>" ?>
+								<?php else: ?>
+									<?php echo "<option value=".$valor.">$key</option>" ?>
+								<?php endif ?>
+							<?php endforeach ?>
+						</select>
+						<label>Cantidad disponible</label>
+						<input type="number" name="cantidad" min="1" step="1" value="<?php echo $publicacion->cantidad ?>" class="form-control">
+						<label>Descripción corta</label>
+						<?php echo Form::textarea('descripcion', "class='form-control'", $publicacion->descripcion) ?>
+					</div>
+					<div class="col-sm-6">
+						<label>Imagen 1</label>
+						<input type="file" name="imagen1" class="form-control">
+						<label>Imagen 2</label>
+						<input type="file" name="imagen2" class="form-control">
+						<label>Imagen 3</label>
+						<input type="file" name="imagen3" class="form-control">
+						<label>Descripción completa</label>
+						<?php echo Form::textarea('descripcionl', "class='form-control'", $publicacion->descripcionl) ?>
+						<br>
+						<?php echo Form::submit('Editar publicación', 'class="btn btn-primary"') ?>
+					</div>
+				</div>
+		<?php echo Form::close() ?>
+	</div>
+	<div class="col-sm-2"></div>
+</div>

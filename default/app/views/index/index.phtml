@@ -1,0 +1,22 @@
+  <div class="row">
+      <div class="col-sm-12">
+         <div class="page-header">
+            <h1>Los mejores productos y servicios están aquí</h1>
+         </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-4 col-sm-offset-2">
+      Ingresa tu correo
+          <?php echo Form::open('', '', 'class="form-inline"') ?>
+            <div class="form-group">
+                <?php echo Form::text('suscripcion', 'class="form-control input-lg"') ?>
+                <?php echo Form::submit('Suscríbete', 'class="btn btn-lg btn-info"') ?>
+            </div>
+          <?php echo Form::close() ?>
+      </div>
+      <div class="col-sm-6">
+          <h2>¿Quieres tener UWorks en tu empresa?</h2>
+      </div>
+  </div>
+  

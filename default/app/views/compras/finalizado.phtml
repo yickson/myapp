@@ -1,0 +1,100 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="text-center">Revisión final</h3>
+  </div>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <table class="table table-bordered">
+      <?php if($carrito == null): ?>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            No has agregado nada al carrito de compras aún.
+          </div>
+        </div>
+      <?php else: ?>
+      <tr>
+        <th>Nombre del producto/servicio</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Total por artículo</th>
+      </tr>
+      <?php foreach($carrito as $valor): ?>
+        <?php $codigo = $valor['unique_id'] ?>
+        <?php $item = $valor['id'] ?>
+        <tr>
+          <td><?php echo $valor['nombre'] ?></td>
+          <td><?php echo $valor['precio'] ?></td>
+          <td><?php echo $valor['cantidad'] ?></td>
+          <td><?php echo $valor['precio']* $valor['cantidad'] ?></td>
+        </tr>
+      <?php endforeach ?>
+    <?php endif ?>
+    </table>
+  </div>
+  <div class="col-sm-2"></div>
+  </div>
+  <div class="col-sm-6">
+    <h4>Contacto</h4>
+    <ul class="list-group">
+      <li class="list-group-item">
+        Nombre: <?php echo $datos->nombre ?>
+      </li>
+      <li class="list-group-item">
+        Correo electrónico: <?php echo $datos->correo ?>
+      </li>
+      <li class="list-group-item">
+        Teléfono: <?php echo $datos->telefono ?>
+      </li>
+      <li class="list-group-item">
+        Dirección: <?php echo $datos->direccion ?>
+      </li>
+    </ul>
+    <h4>Datos de envío</h4>
+    <ul class="list-group">
+      <li class="list-group-item">
+        Nombre: <?php echo $datos->nombre ?>
+      </li>
+      <li class="list-group-item">
+        Correo electrónico: <?php echo $datos->correo ?>
+      </li>
+      <li class="list-group-item">
+        Teléfono: <?php echo $datos->telefono ?>
+      </li>
+      <li class="list-group-item">
+        Dirección: <?php echo $datos->direccion ?>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-6">
+    <h4 class="text-center">Opciones de pago</h4>
+    <div class="well">
+      <h5>Valor a pagar</h5>
+      <p><b><?php echo $carro->precio_total() ?></b></p>
+      <hr>
+      <h5>Asigna tus puntos de Uworks</h5>
+      <p>Dispone de <?php echo $datos->puntos ?> puntos</p>
+      <hr>
+      <h5>Total a pagar</h5>
+      <?php $total = $carro->precio_total() ?>
+      <p><b><?php echo $total ?></b></p>
+      <hr>
+      <?php echo Form::open() ?>
+        <label for="forma"><b>Forma de pago</b></label>
+        <div class="radio">
+          <label>
+            <input name="optionsRadios" id="optionsRadios1" value="webpay" type="radio">
+            WebPay
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input name="optionsRadios" id="optionsRadios2" value="khipu" type="radio">
+            Khipu
+          </label>
+        </div>
+        <br>
+        <?php echo Form::submit('PAGAR', 'class="btn btn-primary form-control"') ?>
+      <?php echo Form::close() ?>
+    </div>
+  </div>
+</div>

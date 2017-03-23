@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="text-center">Recuperar la clave</h3>
+  </div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <?php View::content() ?>
+    <?php echo Form::open() ?>
+      <div class="well">
+        <div class="form-group">
+          <label>Ingresar correo asociado a su cuenta</label>
+          <?php echo Form::text('correo', 'class="form-control"') ?>
+          <br>
+          <?php echo Form::submit('Enviar', 'class="btn btn-primary"') ?>
+        </div>
+      </div>
+    <?php echo Form::close() ?>
+  </div>
+  <div class="col-sm-3"></div>
+</div>

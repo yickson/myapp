@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-xs-12">
+		<h3 class="text-center">
+			Detalles del producto/servicio
+		</h3>
+	</div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<div class="col-sm-6">
+			<?php echo Html::img("$publicacion->imagen1", 'Producto/servicio UWorks', 'class="articulo"') ?>
+			<?php echo Html::img("$publicacion->imagen2", 'Producto/servicio UWorks', 'class="articulo"') ?>
+			<?php echo Html::img("$publicacion->imagen3", 'Producto/servicio UWorks', 'class="articulo"') ?>
+		</div>
+		<div class="col-sm-6">
+			<ul>
+		    	<li>Nombre: <?php echo $publicacion->nombre ?></li>
+		    	<li>Descripción: <?php echo $publicacion->descripcion ?></li>
+		    	<li>Descripcion completa <?php echo $publicacion->descripcionl ?></li>
+		    	<li>Fecha: <?php echo $publicacion->fecha ?></li>
+					<li>Precio: <?php echo $publicacion->precio ?></li>
+					<li>Oferta: <?php echo $publicacion->oferta ?></li>
+		    	<li>Tipo: <?php echo $publicacion->tipo ?></li>
+					<li>Categoría: <b><?php echo $publicacion->categoria ?></b></li>
+		    </ul>
+		</div>
+	</div>
+	<div class="col-sm-2"></div>
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="text-center">Cambiar clave</h3>
+  </div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <?php View::content() ?>
+    <?php echo Form::open() ?>
+    <div class="well">
+      <div class="form-group">
+        <label class="control-label">Clave actual</label>
+        <?php echo Form::pass('antiguo', 'class="form-control"') ?>
+        <hr>
+        <label class="control-label">Clave nueva</label>
+        <?php echo Form::pass('clave', 'class="form-control"') ?>
+        <label class="control-label">Confirmar clave nueva</label>
+        <?php echo Form::pass('clave2', 'class="form-control"') ?>
+        <br>
+        <?php echo Form::submit('Cambiar clave de usuario', 'class="btn btn-primary"') ?>
+      </div>
+    </div>
+    <?php echo Form::close() ?>
+    <?php echo Html::link("colaborador/perfil/$identidad", 'Volver a mi perfil', 'class="btn btn-success"') ?>
+  </div>
+  <div class="col-sm-3"></div>
+</div>

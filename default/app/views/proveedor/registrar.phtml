@@ -1,0 +1,163 @@
+<div class="row">
+	<div class="col-xs-12">
+		<h3 class="text-center">
+			Registro de proveedor
+		</h3>
+	</div>
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6">
+	<?php View::content() ?>
+		<?php echo Form::open() ?>
+			<div class="form-group">
+			<label>Nombre de la empresa</label>
+			<?php echo Form::text('empresa', 'class="form-control"') ?>
+			<label>Nombre del usuario</label>
+			<?php echo Form::text('nombre', 'class="form-control"') ?>
+			<label>RUT</label>
+			<?php echo Form::text('rut', 'class="form-control"') ?>
+			<label>Sitio web del proveedor</label>
+			<?php echo Form::text('web', 'class="form-control"') ?>
+			<label>Correo electrónico</label>
+			<?php echo Form::text('correo', 'class="form-control"') ?>
+			<label>Teléfono</label>
+			<?php echo Form::text('telefono', 'class="form-control" placeholder="9 dígitos"') ?>
+			<label>Región</label>
+			<select class="form-control" name="region">
+				<option value="metropolitana">Región Metropolitana</option>
+				<option value="i - tarapaca" disabled>I Tarapacá</option>
+				<option value="ii - antofagasta" disabled>II Antofagasta</option>
+				<option value="iii - atacama" disabled>III Atacama</option>
+				<option value="iv - coquimbo" disabled>IV Coquimbo</option>
+				<option value="v - valparaiso" disabled>V Valparaíso</option>
+				<option value="vi - ohiggins" disabled>VI O'Higgins</option>
+				<option value="vii - maule" disabled>VII Maule</option>
+				<option value="viii - biobio" disabled>VIII Bío bío</option>
+				<option value="ix - araucania" disabled>IX Araucanía</option>
+				<option value="x - los lagos" disabled>X Los Lagos</option>
+				<option value="xi - aisen" disabled>XI Aisén</option>
+				<option value="xii - los magallanes" disabled>XII Los Magallanes</option>
+			</select>
+			<label>Comunas en los cuales puede ofrecer tu producto o servicio</label>
+			<div class="checkbox">
+				<input type="checkbox" id="checkTodos" /><label>Todas las comunas</label>
+			</div>
+			<div class="col-sm-6">
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="cerrillo"><label>Cerrillo</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="cerro navia"><label>Cerro Navia</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="conchali"><label>Conchalí</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="el bosque"><label>El Bosque</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="estacion central"><label>Estación Central</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="huechuraba"><label>Huechuraba</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="independencia"><label>Independencia</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="la cisterna"><label>La Cisterna</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="la florida"><label>La Florida</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="la pintana"><label>La Pintana</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="la granja"><label>La Granja</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="la reina"><label>La Reina</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="las condes"><label>Las Condes</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="lo barnechea"><label>Lo Barnechea</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="lo espejo"><label>Lo Espejo</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="comuna[]" value="lo prado"><label>Lo Prado</label>
+			</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="macul"><label>Macúl</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="maipu"><label>Maipu</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="nunoa"><label>Ñuñoa</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="pedro aguirre cerca"><label>Pedro Aguirre Cerca</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="penalolen"><label>Peñalolen</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="providencia"><label>Providencia</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="pudahuel"><label>Pudahuel</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="quilicura"><label>Quilicura</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="quinta normal"><label>Quinta Normal</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="recoleta"><label>Recoleta</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="renca"><label>Renca</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="san miguel"><label>San Miguel</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="san joaquin"><label>San Joaquín</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="san ramon"><label>San Ramón</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="santiago"><label>Santiago</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="comuna[]" value="vitacura"><label>Vitacura</label>
+				</div>
+				</div>
+			<label>Dirección</label>
+			<?php echo Form::textarea('direccion', 'class="form-control"') ?>
+			<label>¿Tiene delivery?</label>
+			<select name="delivery" class="form-control">
+				<option value="SI">Si</option>
+				<option value="NO">No</option>
+			</select>
+			<label>Contraseña</label>
+			<?php echo Form::pass('clave', 'class="form-control"') ?>
+			<br>
+			<?php echo Form::submit('Registrarme', 'class="btn btn-primary"') ?>
+		</div>
+		<?php echo Form::close() ?>
+		 <!--<div class="alert alert-dismissible alert-success">
+		 <strong><p class="text-left">Al registrarse está aceptando nuestras condiciones, puede leer nuestras
+			términos y condiciones en este <?php echo Html::link('proveedor/contrato', 'ENLACE', 'class="alert-link" target="_blank"') ?>.</p></strong>
+		</div>-->
+		</div>
+	<div class="col-sm-3"></div>
+</div>

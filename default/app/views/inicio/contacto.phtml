@@ -1,0 +1,25 @@
+<div class="row">
+<div class="col-sm-12">
+	<h2 class="text-center">Contacto</h2>
+</div>
+	<div class="col-sm-6">
+		<h3>Información importante</h3>
+		<p>Si usted ya es usuario de nosotros entonces por favor ingrese a su plataforma para luego enviarnos un ticket de soporte para darle respuesta brevedad a la brevedad posible.</p>
+	</div>
+	<div class="col-sm-6">
+	<div class="well">
+		<div class="form-group">
+			<?php echo Form::open() ?>
+				<label>Nombre</label>
+				<?php echo Form::text('nombre', 'class="form-control required"') ?>
+				<label>Correo</label>
+				<?php echo Form::text('correo', 'class="form-control required"') ?>
+				<label>Motivo</label>
+				<?php echo Form::textarea('motivo', 'class="form-control required"') ?>
+				<hr>
+				<?php echo Form::submit('Enviar', 'class="btn btn-info"') ?>
+			<?php echo Form::close() ?>
+		</div>
+	</div>
+	</div>
+</div>

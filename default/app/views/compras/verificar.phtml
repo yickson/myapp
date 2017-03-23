@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="text-center">Revisión de compra</h3>
+  </div>
+  <div class="col-sm-8">
+    <h4>Contacto</h4>
+    <ul class="list-group">
+      <li class="list-group-item">
+        Nombre: <?php echo $datos->nombre ?>
+      </li>
+      <li class="list-group-item">
+        Correo electrónico: <?php echo $datos->correo ?>
+      </li>
+      <li class="list-group-item">
+        Teléfono: <?php echo $datos->telefono ?>
+      </li>
+      <li class="list-group-item">
+        Dirección: <?php echo $datos->direccion ?>
+      </li>
+    </ul>
+    <?php echo Form::open() ?>
+    <div class="form-group">
+      <label>Teléfono adicional</label>
+      <?php echo Form::text('telefono2', 'class="form-control"') ?>
+      <label>Comuna</label>
+
+      <label>Dirección</label>
+      <?php echo Form::textarea('direccion', 'class="form-control"') ?>
+      <?php echo Form::submit('Enviar datos', 'class="btn btn-success"') ?>
+    </div>
+    <?php echo Form::close() ?>
+  </div>
+  <div id="app" class="col-sm-4">
+    <div class="well">
+      <h4 class="text-center">Opciones de pago</h4>
+      <h5>Valor a pagar</h5>
+      <p><b><?php echo $carro->precio_total() ?></b></p>
+      <hr>
+      <?php echo Form::open() ?>
+      <h5>Asigna tus puntos de Uworks</h5>
+      <p>Dispone de <?php echo $datos->puntos ?> puntos</p>
+      <input v-model="message" type="number" name="puntos" placeholder="1000" min="1" max="<?php echo $datos->puntos ?>" class="form-control">
+      <hr>
+      <h5>Total a pagar</h5>
+      <?php $total = $carro->precio_total() ?>
+      <p><b>{{ (<?php echo $total ?> - message) }}</b></p>
+        <input type="hidden" name="monto" value="verifica">
+        <?php echo Form::submit('Continuar con el pedido', 'class="btn btn-primary"') ?>
+      <?php echo Form::close() ?>
+    </div>
+  </div>
+</div>

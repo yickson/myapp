@@ -1,0 +1,33 @@
+<?php $servicios = array('Todos los servicios' => 'Todos los servicios', 'Colaciones y almuerzos' => 'Colaciones y almuerzos', 'Servicio automotriz' => 'Servicio automotriz', 'Compra de materiales' => 'Compra de materiales', 'Consultas legales' => 'Consultas legales', 'Servicios para el hogar' => 'Servicios para el hogar', 'Salud y familia' => 'Salud y familia', 'Entrega de Snacks' => 'Entrega de Snacks', 'Envíos y encomiendas' => 'Envíos y encomiendas', 'Lavado/Planchado' => 'Lavado/Planchado', 'Otros' => 'Otros') ?>
+<div class="row">
+	<div class="col-xs-12">
+		<h3 class="text-center">ELIGE TUS CATEGORIAS</h3>
+	</div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<?php echo Form::open('', '', 'class="form-inline"') ?>
+			<div class="form-group">
+				<?php echo Form::select('Otros', $servicios, 'class="form-control"') ?>
+				<?php echo Form::select('Otros', $servicios, 'class="form-control"') ?>
+				<?php echo Form::select('Otros', $servicios, 'class="form-control"') ?>
+				<?php echo Form::submit('Busca lo que deseas', 'class="form-control btn btn-info"') ?>
+			</div>
+		<?php echo Form::close() ?>
+	</div>
+	<div class="col-sm-2"></div>
+</div>
+<br>
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8 col-xs-12">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Encuentra lo que deseas</h3>
+		  </div>
+		  <div class="panel-body">
+		    <p>Consigue lo que quieras en increíbles precios.</p>
+		  </div>
+		</div>
+	</div>
+	<div class="col-sm-2"></div>
+</div>

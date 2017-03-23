@@ -1,0 +1,59 @@
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<h3 class="text-center">MI PERFIL</h3>
+		  <ul class="nav nav-tabs">
+		  <li class="active"><a href="#inicio" data-toggle="tab" aria-expanded="true">MIS DATOS</a></li>
+		  <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">MIS VENTAS</a></li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+		  <div class="tab-pane fade active in" id="inicio">
+		    <ul>
+		    	<li>Nombre: <?php echo $proveedor->nombre ?></li>
+		    	<li>Empresa que representa: <?php echo $proveedor->empresa ?></li>
+					<li>RUT: <?php echo $proveedor->rut ?></li>
+		    	<li>Correo: <?php echo $proveedor->correo ?></li>
+		    	<li>Sitio web: <?php echo $proveedor->web ?></li>
+		    	<li>Teléfono: <?php echo $proveedor->telefono ?></li>
+		    	<li>Región: <?php echo $proveedor->region ?></li>
+		    	<li>
+						Comuna: <?php echo $proveedor->comuna ?>
+						<ul>
+							<?php foreach ($comunas as $valor): ?>
+								<?php echo "<li>$valor->comuna</li>" ?>
+							<?php endforeach ?>
+						</ul>
+					</li>
+		    	<li>Dirección comercial: <?php echo $proveedor->direccion ?></li>
+		    </ul>
+				<?php echo Html::link("proveedor/cambiar/$identidad", 'Cambiar mi clave', 'class="btn btn-primary"') ?>
+				<?php echo Html::link("proveedor/editar/$identidad", 'Editar mi perfil', 'class="btn btn-info"') //proveedor/editar/$identidad?>
+		  </div>
+		  <div class="tab-pane fade" id="profile">
+		  <div class="table-responsive">
+		    <table class="table table-bordered">
+					<?php if($ventas == null): ?>
+						<div class="panel panel-default">
+						  <div class="panel-body">
+						    No posee ninguna venta aún
+						  </div>
+						</div>
+					<?php else: ?>
+						<tr><th>Fecha</th><th>Nombre</th><th>Total</th><th>Estatus</th><th>Ver detalle</th></tr>
+						<?php foreach($ventas as $valor): ?>
+							<tr>
+				    	<td><?php echo $valor->fecha ?></td>
+				    	<td><?php echo $valor->nombre ?></td>
+				    	<td><?php echo $valor->monto ?></td>
+				    	<td><?php echo $valor->estatus ?></td>
+				    	<td><?php echo Html::link("ver/$id", 'Ver detalle', 'class="btn btn-info"') ?></td>
+				    	</tr>
+						<?php endforeach ?>
+					<?php endif ?>
+		    </table>
+		   </div>
+		  </div>
+		</div>
+	</div>
+	<div class="col-sm-2"></div>
+</div>

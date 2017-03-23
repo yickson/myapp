@@ -1,0 +1,42 @@
+<?php $comun = array('Cerrillo' => 'cerrillo', 'Cerro Navía'=>'cerro navia', 'Conchalí'=>'conchali', 'El Bosque'=>'el bosque', 'Estación Central'=>'estacion central', 'Huechuraba'=>'huechuraba', 'Independencia'=>'independencia', 'La Cisterna'=>'la cisterna', 'La Florida'=>'la florida', 'La Pintana'=>'la pintana', 'La Granja'=>'la granja', 'La Reina'=>'la reina', 'Las Condes'=>'las condes', 'Lo Barnechea'=>'lo barnechea', 'Lo Espejo'=>'lo espejo', 'Lo Prado'=>'lo prado', 'Macúl'=>'macul', 'Maipú'=>'maipu', 'Ñuñoa'=>'nunoa', 'Pedro Aguirre Cerca'=>'pedro aguirre cerca', 'Peñalolen'=>'penalolen', 'Providencia'=>'providencia', 'Pudahuel'=>'pudahuel', 'Quilicura'=>'quilicura', 'Quinta Normal'=>'quinta normal', 'Recoleta'=>'recoleta', 'Renca'=>'renca', 'San Miguel'=>'san miguel', 'San Joaquín'=>'san joaquin', 'San Ramón'=>'san ramon', 'Santiago'=>'santiago', 'Vitacura'=>'vitacura'); ?>
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="text-center">Editar datos del perfil</h3>
+  </div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <?php View::content() ?>
+    <div class="well">
+      <?php echo Form::open() ?>
+      <input type="hidden" name="id" value="<?php echo $identidad ?>">
+      <div class="form-group">
+        <label>Nombre y apellido</label>
+        <?php echo Form::text('nombre', 'class="form-control"', $colaborador->nombre) ?>
+        <label>Correo</label>
+        <?php echo Form::email('correo', 'class="form-control"', $colaborador->correo) ?>
+        <label>Correo personal</label>
+        <?php echo Form::email('correo2', 'class="form-control" placeholder="Ingresar su correo personal"', $colaborador->correo2) ?>
+        <label>Teléfono</label>
+        <?php echo Form::number('telefono', 'class="form-control" min="8"', $colaborador->telefono) ?>
+        <label>Teléfono 2</label>
+        <?php echo Form::number('telefono2', 'class="form-control" min="8" placeholder="Teléfono alternativo de contacto"', $colaborador->telefono2) ?>
+        <label>Comuna</label>
+        <select name="comuna" class="form-control">
+          <?php foreach($comun as $key=>$valor): ?>
+            <?php if($valor == $colaborador->comuna): ?>
+              <?php echo "<option value=".$valor." selected>$key</option>" ?>
+            <?php else: ?>
+              <?php echo "<option value=".$valor.">$key</option>" ?>
+            <?php endif ?>
+          <?php endforeach ?>
+        </select>
+        <label></label>
+        <br>
+        <?php echo Form::submit('Editar perfil', 'class="btn btn-primary"') ?>
+        <?php echo Html::link("colaborador/perfil/$colaborador->id", "Volver a tu perfil", 'class="btn btn-success"') ?>
+      </div>
+      <?php echo Form::close() ?>
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div>

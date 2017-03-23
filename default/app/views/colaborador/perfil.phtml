@@ -1,0 +1,54 @@
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<h3 class="text-center">MI PERFIL</h3>
+		  <ul class="nav nav-tabs">
+		  <li class="active"><a href="#inicio" data-toggle="tab" aria-expanded="true">MIS DATOS</a></li>
+		  <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">MIS COMPRAS</a></li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+		  <div class="tab-pane fade active in" id="inicio">
+		    <ul>
+		    	<li>Nombre: <?php echo $colaborador->nombre ?></li>
+		    	<li>Correo: <?php echo $colaborador->correo ?></li>
+					<?php if($colaborador->correo2 != null): ?>
+						<li>Correo personal: <?php echo $colaborador->correo2 ?></li>
+					<?php endif ?>
+		    	<li>Teléfono: <?php echo $colaborador->telefono ?></li>
+					<?php if($colaborador->telefono2 != null): ?>
+						<li>Telefono alternativo: <?php echo $colaborador->telefono2 ?></li>
+					<?php endif ?>
+					<li>Región: Metropolitana</li>
+		    	<li>Comuna: <?php echo $colaborador->comuna ?></li>
+		    </ul>
+				<?php echo Html::link("colaborador/cambiar/$identidad", 'Cambiar mi clave', 'class="btn btn-primary"') ?>
+				<?php echo Html::link("colaborador/editar/$identidad", 'Editar mi perfil', 'class="btn btn-info"') ?>
+		  </div>
+		  <div class="tab-pane fade" id="profile">
+		  <div class="table-responsive">
+		    <table class="table table-bordered">
+					<?php if($compras == null): ?>
+						<div class="panel panel-default">
+						  <div class="panel-body">
+						    No ha hecho ninguna compra aún
+						  </div>
+						</div>
+					<?php else: ?>
+						<tr><th>Fecha</th><th>Nombre</th><th>Total</th><th>Estatus</th><th>Ver detalle</th></tr>
+						<?php foreach($compras as $valor): ?>
+							<tr>
+				    	<td><?php echo $valor->fecha ?></td>
+				    	<td><?php echo $valor->nombre ?></td>
+				    	<td><?php echo $valor->monto ?></td>
+				    	<td><?php echo $valor->estatus ?></td>
+				    	<td><?php echo Html::link("ver/$id", 'Ver detalle', 'class="btn btn-info"') ?></td>
+				    	</tr>
+						<?php endforeach ?>
+					<?php endif ?>
+		    </table>
+		   </div>
+		  </div>
+		</div>
+	</div>
+	<div class="col-sm-2"></div>
+</div>

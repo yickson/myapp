@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-xs-12">
+		<h3 class="text-center">
+			Registro de proveedor
+		</h3>
+	</div>
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6">
+	<?php View::content() ?>
+    <div class="well">
+  		<?php echo Form::open() ?>
+      <input type="hidden" name="id" value=<?php echo $proveedor->id ?> >
+  			<div class="form-group">
+  			<label>Nombre de la empresa</label>
+  			<?php echo Form::text('proveedor.empresa', 'class="form-control"') ?>
+  			<label>Nombre del usuario</label>
+  			<?php echo Form::text('proveedor.nombre', 'class="form-control"') ?>
+  			<label>RUT</label>
+  			<?php echo Form::text('proveedor.rut', 'class="form-control"') ?>
+  			<label>Sitio web del proveedor</label>
+  			<?php echo Form::text('proveedor.web', 'class="form-control"') ?>
+  			<label>Correo electrónico</label>
+  			<?php echo Form::text('proveedor.correo', 'class="form-control"') ?>
+  			<label>Teléfono</label>
+  			<?php echo Form::text('proveedor.telefono', 'class="form-control" placeholder="9 dígitos"') ?>
+  			<label>Región</label>
+        <select class="form-control" name="region">
+  				<option value="metropolitana">Región Metropolitana</option>
+  				<option value="i - tarapaca" disabled>I Tarapacá</option>
+  				<option value="ii - antofagasta" disabled>II Antofagasta</option>
+  				<option value="iii - atacama" disabled>III Atacama</option>
+  				<option value="iv - coquimbo" disabled>IV Coquimbo</option>
+  				<option value="v - valparaiso" disabled>V Valparaíso</option>
+  				<option value="vi - ohiggins" disabled>VI O'Higgins</option>
+  				<option value="vii - maule" disabled>VII Maule</option>
+  				<option value="viii - biobio" disabled>VIII Bío bío</option>
+  				<option value="ix - araucania" disabled>IX Araucanía</option>
+  				<option value="x - los lagos" disabled>X Los Lagos</option>
+  				<option value="xi - aisen" disabled>XI Aisén</option>
+  				<option value="xii - los magallanes" disabled>XII Los Magallanes</option>
+  			</select>
+        <label>Comunas en donde estas activo:</label>
+
+        <label>Selecciona la comuna en donde quieres entregar tus productos o servicios</label>
+        <div class="checkbox">
+          <input type="checkbox" id="checkTodos" /><label>Todas las comunas</label>
+        </div>
+        <?php $monto = count($comunas); ?>
+        <?php $ultimo = end($comunas) ?>
+        <?php foreach($nombre as $key=>$valor): ?>
+          <?php for($i=0; $i<$monto; $i++): ?>
+            <?php if($valor == $comunas[$i]): ?>
+              <div class="checkbox">
+                <?php echo "<input type='checkbox' name='comuna[]' value='".$valor."' checked/><label>$key</label>" ?>
+              </div>
+              <?php continue 2?>
+            <?php else: ?>
+	            <?php if($ultimo == $comunas[$i]): ?>
+                <div class="checkbox">
+                  <?php echo "<input type='checkbox' name='comuna[]' value='".$valor."'/><label>$key</label>" ?>
+                </div>
+              <?php endif ?>
+            <?php endif ?>
+          <?php endfor ?>
+      <?php endforeach ?>
+  			<label>Dirección</label>
+  			<?php echo Form::textarea('proveedor.direccion', 'class="form-control"', '') ?>
+  			<label>¿Tiene delivery?</label>
+  			<select name="proveedor.delivery" class="form-control">
+          <?php foreach($tipo as $key=>$valor): ?>
+            <?php if($valor == $proveedor->delivery): ?>
+              <?php echo "<option value=".$valor." selected>$key</option>" ?>
+            <?php else: ?>
+              <?php echo "<option value=".$valor.">$key</option>" ?>
+            <?php endif ?>
+          <?php endforeach ?>
+  			</select>
+  			<br>
+  			<?php echo Form::submit('Editar datos', 'class="btn btn-primary"') ?>
+  		</div>
+  		<?php echo Form::close() ?>
+      </div>
+		</div>
+	<div class="col-sm-3"></div>
+</div>

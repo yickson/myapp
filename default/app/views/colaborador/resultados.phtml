@@ -1,0 +1,63 @@
+<div class="row">
+	<div class="col-xs-12">
+		<h3 class="text-center">
+			TUS RESULTADOS
+		</h3>
+	</div>
+</div>
+<!--<div class="row">
+<div class="col-xs-12">
+	<h4 class="text-center">Destacados</h4>
+</div>
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10">
+		<div class="col-sm-3">
+			<?php //echo Html::img('destacado.png', 'img de prueba', 'class="logo"') ?>
+		</div>
+		<div class="col-sm-3">
+			<?php //echo Html::img('destacado.png', 'img de prueba', 'class="logo"') ?>
+		</div>
+		<div class="col-sm-3">
+			<?php //echo Html::img('destacado.png', 'img de prueba', 'class="logo"') ?>
+		</div>
+		<div class="col-sm-3">
+			<?php //echo Html::img('destacado.png', 'img de prueba', 'class="logo"') ?>
+		</div>
+	</div>
+	<div class="col-sm-1"></div>
+</div>-->
+<hr>
+<div class="row">
+<div class="col-xs-12">
+	<h4 class="text-center">
+		Consigue lo que quieras
+	</h4>
+</div>
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10">
+		<div id="capa"></div>
+		<?php foreach($resultados as $key=>$datos): ?>
+			<div class="col-sm-3 col-xs-12">
+				<?php echo Html::img($datos->imagen, $datos->nombre, 'class="logo articulo"') ?>
+				<?php echo Html::link("colaborador/detalles/$datos->id", 'Ver más', 'class="btn btn-primary"') ?>
+				<?php echo Html::link("compras/agregar/$datos->id", 'Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span>', 'class="enlace btn btn-success"') ?>
+			</div>
+		<?php endforeach ?>
+		<!--
+		<div class="col-sm-3">
+			<?php //echo Html::img('place200.jpg', 'img de prueba', 'class="logo"') ?>
+		</div>
+		<div class="col-sm-3">
+			<?php //echo Html::img('place200.jpg', 'img de prueba', 'class="logo"') ?>
+		</div>
+		<div class="col-sm-3">
+			<?php //echo Html::img('place200.jpg', 'img de prueba', 'class="logo"') ?>
+		</div>
+		<div class="col-sm-3">
+			<?php //echo Html::img('place200.jpg', 'img de prueba', 'class="logo"') ?>
+		</div>
+	-->
+	</div>
+	<div class="col-sm-1"></div>
+</div>
+<br>

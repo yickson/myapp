@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="text-center">Tus compras</h3>
+  </div>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-5">
+    <?php View::content() ?>
+    <div class="table-responsive">
+			<table class="table table-bordered">
+				<?php if($carrito == null): ?>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							No has agregado nada al carrito de compras aún.
+						</div>
+					</div>
+				<?php else: ?>
+				<tr>
+					<th>Nombre del producto/servicio</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Total por artículo</th>
+          <th></th>
+				</tr>
+				<?php foreach($carrito as $valor): ?>
+          <?php $codigo = $valor['unique_id'] ?>
+          <?php $item = $valor['id'] ?>
+					<tr>
+						<td><?php echo $valor['nombre'] ?></td>
+						<td><?php echo $valor['precio'] ?></td>
+						<td><?php echo $valor['cantidad'] ?></td>
+						<td><?php echo $valor['precio']* $valor['cantidad'] ?></td>
+            <td>
+              <?php echo Html::link("colaborador/detalles/$item", '<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', 'data-placement="top" data-toggle="tooltip" title="Verás más detalles de este artículo"') ?>
+              <?php echo Html::link("compras/borrar/$codigo", '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>', 'data-placement="top" data-toggle="tooltip" title="Eliminarás este artículo del carrito"') ?>
+            </td>
+					</tr>
+				<?php endforeach ?>
+      <?php endif ?>
+			</table>
+		</div>
+  </div>
+  <?php if ($carrito == null): ?>
+    <?php else: ?>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4 class="text-center">Total</h4>
+          <hr>
+          <h5>Número de artículos: <b><?php echo $total->articulos_total() ?></b></h5>
+          <h5>Total: <b><?php echo $total->precio_total().' Pesos' ?></b></h5>
+          <?php echo Html::link("compras/verificar/$identidad", 'Ir a caja', 'class="btn btn-success"') ?>
+          <?php echo Html::link('colaborador', 'Seguir comprando', 'class="btn btn-success"') ?>
+          <hr>
+          <?php echo Html::link('compras/eliminar', 'Eliminar carrito', 'class="btn btn-danger"') ?>
+        </div>
+      </div>
+  <?php endif; ?>
+  <div class="col-sm-2"></div>
+</div>

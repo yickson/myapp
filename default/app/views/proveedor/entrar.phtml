@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6">
+		<h3 class="text-center">Entrar en Panel del Proveedor</h3>
+		<?php View::content() ?>
+		<?php echo Form::open() ?>
+		<input name="mode" type="hidden" value="auth">
+			<div class="well">
+				<div class="form-group">
+					<label>Correo</label>
+					<?php echo Form::text('correo', 'class="form-control"') ?>
+					<label>Contraseña</label>
+					<?php echo Form::pass('clave', 'class="form-control"') ?>
+					<br>
+					<?php echo Form::submit('Ingresar a mi panel', 'class="btn btn-success"') ?>
+				</div>
+				<?php echo Html::link('proveedor/recuperar', '¿Olvidé mi contraseña?', 'class="btn btn-primary"') ?>
+				<?php echo Html::link('proveedor/registrar', '¿No posee cuenta? Regístrate en UWorks', 'class="btn btn-primary"') ?>
+			</div>
+			<?php echo Form::close() ?>
+	</div>
+	<div class="col-sm-3"></div>
+</div>

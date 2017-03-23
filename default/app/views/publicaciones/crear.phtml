@@ -1,0 +1,75 @@
+<?php $servicios = array('Todos los servicios' => 'Todos los servicios', 'Colaciones y almuerzos' => 'Colaciones y almuerzos', 'Servicio automotriz' => 'Servicio automotriz', 'Compra de materiales' => 'Compra de materiales', 'Consultas legales' => 'Consultas legales', 'Servicios para el hogar' => 'Servicios para el hogar', 'Salud y familia' => 'Salud y familia', 'Entrega de Snacks' => 'Entrega de Snacks', 'Envíos y encomiendas' => 'Envíos y encomiendas', 'Lavado/Planchado' => 'Lavado/Planchado', 'Otros' => 'Otros') ?>
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<h3 class="text-center">Crear publicación</h3>
+		<?php View::content() ?>
+		<?php echo Form::openMultipart() ?>
+		<input type="hidden" value="<?php echo $identidad ?>" name="proveedor_id">
+				<div class="form-group">
+					<div class="col-sm-6">
+						<label>Nombre del producto/servicio</label>
+						<?php echo Form::text('nombre', 'class="form-control" required') ?>
+						<label>Precio</label>
+						<input type="number" name="precio" min="1" step="1" class="form-control" placeholder="12000">
+						<label>Oferta</label>
+						<input type="number" name="oferta" min="1" step="1" class="form-control" placeholder="8000">
+						<label>¿Es un servicio o producto?</label>
+						<select name="tipo" class="form-control">
+							<option value="servicio">Servicio</option>
+							<option value="producto">Producto</option>
+						</select>
+						<label>Categoría del producto/servicio</label>
+						<select class="form-control" name="categoria">
+							<option disabled>SERVICIOS</option>
+							<option value="colaciones">Colaciones y almuerzos</option>
+							<option value="belleza">Belleza</option>
+							<option value="servicio">Servicio automotriz</option>
+							<option value="materiales">Compra de materiales</option>
+							<option value="legales">Consultas legales</option>
+							<option value="servicios para el hogar">Servicios para el hogar</option>
+							<option value="salud">Salud y familia</option>
+							<option value="snacks">Entrega de Snacks</option>
+							<option value="encomiendas">Envíos y encomiendas</option>
+							<option value="lavado">Lavado/Planchado</option>
+							<option value="otros servicios">Otros Servicios</option>
+							<option disabled>PRODUCTOS</option>
+							<option value="accesorios">Accesorios</option>
+							<option value="alimentos">Alimentos y bebidas</option>
+							<option value="auto">Auto</option>
+							<option value="belleza">Belleza</option>
+							<option value="bicicletas">Bicicletas</option>
+							<option value="deportes">Deportes y aire libre</option>
+							<option value="hogar">Hogar y jardín</option>
+							<option value="infantil">Infantil y juguetes</option>
+							<option value="libros">Libros, música y ocio</option>
+							<option value="limpieza">Limpieza</option>
+							<option value="mascotas">Mascotas</option>
+							<option value="salud">Salud y farmacias</option>
+							<option value="tecnologias">Tecnologías</option>
+							<option value="vestuario">Vestuario y calzados</option>
+							<option value="vino">Vino, licores y cervezas</option>
+							<option value="otros productos">Otros Productos</option>
+						</select>
+						<label>Cantidad disponible</label>
+						<input type="number" name="cantidad" min="1" value="1" step="1" class="form-control">
+						<label>Descripción corta</label>
+						<?php echo Form::textarea('descripcion', 'class="form-control" required') ?>
+					</div>
+					<div class="col-sm-6">
+						<label>Imagen 1</label>
+						<input type="file" name="imagen1" class="form-control">
+						<label>Imagen 2</label>
+						<input type="file" name="imagen2" class="form-control">
+						<label>Imagen 3</label>
+						<input type="file" name="imagen3" class="form-control">
+						<label>Descripción completa</label>
+						<?php echo Form::textarea('descripcionl', 'class="form-control" required') ?>
+						<br>
+						<?php echo Form::submit('Crear publicación', 'class="btn btn-success"') ?>
+					</div>
+				</div>
+		<?php echo Form::close() ?>
+	</div>
+	<div class="col-sm-2"></div>
+</div>

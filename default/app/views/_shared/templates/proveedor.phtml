@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta http-equiv='Content-type' content='text/html; charset=<?php echo APP_CHARSET ?>' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/img/icono.ico" />
+  <meta name="description" content="Marketplace Chile Uworks" />
+  <title>Uworks!</title>
+  <?php Tag::css('lumen') ?>
+  <?php Tag::css('style') ?>
+  <?php Tag::css('awesome') ?>
+  <?php Tag::css('uworks') ?>
+  <?php echo Html::includeCss() ?>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a href="/proveedor"><?php echo Html::img('Logo1.png', 'Colaboradores más contentos', 'class="navbar-brand"') ?></a>
+        </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><?php echo Html::link("proveedor/pedidos/$identidad", 'Pedidos') //proveedor/pedidos/$identidad?></li>
+          <li><?php echo Html::link("publicaciones/crear/$identidad", 'Publicar') //publicaciones/crear/$identidad?></li>
+          <li><?php echo Html::link("publicaciones/mostrar/$identidad", 'Mis Publicaciones') //publicaciones/mostrar/$identidad?></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+        <?php echo Html::link('#', "Bienvenido $nombrep <span class='caret'></span>", 'class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"') ?>
+          <ul class="dropdown-menu" role="menu">
+            <li><?php echo Html::link("proveedor/perfil/$identidad", 'Mi perfil') //proveedor/perfil/$identidad?></li>
+            <li><?php echo Html::link('proveedor/cerrar', 'Cerrar sesión') ?></li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container-fluid">
+  <?php View::content() ?>
+</div>
+<div class="container-fluid">
+  <?php View::partial('kumbia/piep') ?>
+</div>
+  <?php echo Tag::js('jquery') ?>
+  <?php echo Tag::js('bootstrap') ?>
+  <script type="text/javascript">
+    $("#checkTodos").change(function () {
+      $("input:checkbox").prop('checked', $(this).prop("checked"));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!--<div class="row">
+	<div class="col-xs-12">
+		<h2 class="text-center">¿Qué necesitas?</h2>
+	</div>
+	<div class="col-sm-6">
+		<?php //echo Html::img('prueba.png', 'img de prueba', 'class="logo"') ?>
+		<h3 class="text-center"><?php //echo Html::link('ver', 'SERVICIOS') ?></h3>
+	</div>
+	<div class="col-sm-6">
+		<?php //echo Html::img('prueba.png', 'img de prueba', 'class="logo"') ?>
+		<h3 class="text-center"><?php //echo Html::link('crear', 'PRODUCTOS') ?></h3>
+	</div>
+</div>-->
+<?php $servicios = array('Todos los servicios' => 'Todos los servicios', 'Colaciones y almuerzos' => 'Colaciones y almuerzos', 'Servicio automotriz' => 'Servicio automotriz', 'Compra de materiales' => 'Compra de materiales', 'Consultas legales' => 'Consultas legales', 'Servicios para el hogar' => 'Servicios para el hogar', 'Salud y familia' => 'Salud y familia', 'Entrega de Snacks' => 'Entrega de Snacks', 'Envíos y encomiendas' => 'Envíos y encomiendas', 'Lavado/Planchado' => 'Lavado/Planchado', 'Otros' => 'Otros') ?>
+<?php $regiones = array('Todo Chile' => 'Todo Chile', 'Región Metropolitana' => 'region metropolitana', '' => '', '' => '', '' => '', '' => '', '' => '') ?>
+<?php $comunas = array('Cerrillo' => 'cerrillo', 'Cerro Navía'=>'cerro navia', 'Conchalí'=>'conchali', 'El Bosque'=>'el bosque', 'Estación Central'=>'estacion central', 'Huechuraba'=>'huechuraba', 'Independencia'=>'independencia', 'La Cisterna'=>'la cisterna', 'La Florida'=>'la florida', 'La Pintana'=>'la pintana', 'La Granja'=>'la granja', 'La Reina'=>'la reina', 'Las Condes'=>'las condes', 'Lo Barnechea'=>'lo barnechea', 'Lo Espejo'=>'lo espejo', 'Lo Prado'=>'lo prado', 'Macúl'=>'macul', 'Maipú'=>'maipu', 'Ñuñoa'=>'nunoa', 'Pedro Aguirre Cerca'=>'pedro aguirre cerca', 'Peñalolen'=>'penalolen', 'Providencia'=>'providencia', 'Pudahuel'=>'pudahuel', 'Quilicura'=>'quilicura', 'Quinta Normal'=>'quinta normal', 'Recoleta'=>'recoleta', 'Renca'=>'renca', 'San Miguel'=>'san miguel', 'San Joaquín'=>'san joaquin', 'San Ramón'=>'san ramon', 'Santiago'=>'santiago', 'Vitacura'=>'vitacura') ?>
+<div class="row">
+	<div class="col-xs-12">
+		<h3 class="text-center">ELIGE TUS CATEGORIAS</h3>
+	</div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<?php echo Form::open('colaborador/resultados', 'POST', 'class="form-inline"') ?>
+			<div class="form-group">
+				<select class="form-control" name="tipo">
+					<option value="producto">Productos</option>
+					<option value="servicio">Servicios</option>
+				</select>
+				<select class="form-control" name="servicios">
+					<option disabled>SERVICIOS</option>
+					<option value="colaciones">Colaciones y almuerzos</option>
+					<option value="belleza">Belleza</option>
+					<option value="servicio">Servicio automotriz</option>
+					<option value="materiales">Compra de materiales</option>
+					<option value="legales">Consultas legales</option>
+					<option value="servicios para el hogar">Servicios para el hogar</option>
+					<option value="salud">Salud y familia</option>
+					<option value="snacks">Entrega de Snacks</option>
+					<option value="encomiendas">Envíos y encomiendas</option>
+					<option value="lavado">Lavado/Planchado</option>
+					<option value="otros servicios">Otros Servicios</option>
+					<option disabled>PRODUCTOS</option>
+					<option value="accesorios">Accesorios</option>
+					<option value="alimentos">Alimentos y bebidas</option>
+					<option value="auto">Auto</option>
+					<option value="belleza">Belleza</option>
+					<option value="bicicletas">Bicicletas</option>
+					<option value="deportes">Deportes y aire libre</option>
+					<option value="hogar">Hogar y jardín</option>
+					<option value="infantil">Infantil y juguetes</option>
+					<option value="libros">Libros, música y ocio</option>
+					<option value="limpieza">Limpieza</option>
+					<option value="mascotas">Mascotas</option>
+					<option value="salud">Salud y farmacias</option>
+					<option value="tecnologias">Tecnologías</option>
+					<option value="vestuario">Vestuario y calzados</option>
+					<option value="vino">Vino, licores y cervezas</option>
+					<option value="otros productos">Otros Productos</option>
+				</select>
+				<?php //echo Form::select('Otros', $region, 'class="form-control"') ?>
+				<select class="form-control" name="region">
+					<option value="metropolitana">Región Metropolitana</option>
+					<option value="i - tarapaca" disabled>I Tarapacá</option>
+					<option value="ii - antofagasta" disabled>II Antofagasta</option>
+					<option value="iii - atacama" disabled>III Atacama</option>
+					<option value="iv - coquimbo" disabled>IV Coquimbo</option>
+					<option value="v - valparaiso" disabled>V Valparaíso</option>
+					<option value="vi - ohiggins" disabled>VI O'Higgins</option>
+					<option value="vii - maule" disabled>VII Maule</option>
+					<option value="viii - biobio" disabled>VIII Bío bío</option>
+					<option value="ix - araucania" disabled>IX Araucanía</option>
+					<option value="x - los lagos" disabled>X Los Lagos</option>
+					<option value="xi - aisen" disabled>XI Aisén</option>
+					<option value="xii - los magallanes" disabled>XII Los Magallanes</option>
+				</select>
+				<?php echo Form::select('comunas', $comunas, 'class="form-control"') ?>
+				<?php echo Form::submit('Busca lo que deseas', 'class="form-control btn btn-info"') ?>
+			</div>
+		<?php echo Form::close() ?>
+	</div>
+	<div class="col-sm-2"></div>
+</div>
+<br>
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8 col-xs-12">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Encuentra lo que deseas</h3>
+		  </div>
+		  <div class="panel-body">
+		    <p>Consigue lo que quieras en increíbles precios.</p>
+		  </div>
+		</div>
+	</div>
+	<div class="col-sm-2"></div>
+</div>
