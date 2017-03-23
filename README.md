@@ -1,4 +1,4 @@
-![KumbiaPHP logo](https://rawgit.com/kumbiaphp/kumbiaphp/1.0/default/public/img/kumbiaphp.svg)
+![Uworks](https://rawgit.com/kumbiaphp/kumbiaphp/1.0/default/public/img/kumbiaphp.svg)
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/KumbiaPHP/KumbiaPHP/badges/quality-score.png?b=1.0)](https://scrutinizer-ci.com/g/KumbiaPHP/KumbiaPHP/?branch=1.0)
 [![Code Climate](https://codeclimate.com/github/KumbiaPHP/KumbiaPHP/badges/gpa.svg)](https://codeclimate.com/github/KumbiaPHP/KumbiaPHP)
@@ -17,11 +17,6 @@ Manual en construcción de la 1.0: https://github.com/KumbiaPHP/
 
 
 Rápida introducción a lo nuevo de la beta2 (faltan por añadir): http://wiki.kumbiaphp.com/KumbiaPHP_Framework_Versi%C3%B3n_1.0_Beta2
-
-CRUD en beta2: http://wiki.kumbiaphp.com/Beta2_CRUD_en_KumbiaPHP_Framework
-~ API para usuarios de la beta2: http://www.kumbiaphp.com/api/beta2/
-~ API para los desarrolladores del core: http://www.kumbiaphp.com/api/beta2-dev/
-~ Seguimos trabajando para actualizar bien el phpdoc y tener actualizado el API.
 
 
 Comunidad
